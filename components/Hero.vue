@@ -55,16 +55,4 @@ export default {};
 .suggested a:hover {
   color: white;
 }
-
-input::before {
-  position: absolute;
-  height: 3rem;
-  width: 3rem;
-  top: 50%;
-
-  transform: translate(-50%, -50%);
-  right: 0rem;
-  background-image: url("/assets/search.svg");
-  background-size: contain;
-}
 </style>
