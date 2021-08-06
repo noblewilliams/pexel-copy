@@ -9,7 +9,9 @@ module.exports = {
       colors: {
         "pexel-green": "#08A081",
         "input-white": "#F5F4F3",
-        "tab-active": "#0064f9"
+        "tab-active": "#0064f9",
+        "nav-text": "#1a1a1a",
+        "nav-bg": "#232A34"
       },
       boxShadow: {
         tab: "0 1px 3px 0 rgb(0 0 0 / 8%)"
