@@ -48,7 +48,7 @@ export default {
     const client = createClient(
       "563492ad6f9170000100000179b3bb5bd9e645299ff2696ddcac22e9"
     );
-    const query = "people";
+    const query = "art";
 
     client.photos
       .search({ query, per_page: 10 })
