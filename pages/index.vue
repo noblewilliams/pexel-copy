@@ -17,11 +17,11 @@
       <div v-if="errored">sorry, something went wrong. try again.</div>
       <div v-else-if="loading">loading</div>
       <div v-else>
-        <div class="photos">
+        <div class="photos px-6 lg:px-20">
           <div
             v-for="(photo, id) in catalogue"
             :key="id"
-            class="w-5/12 lg:w-4/12 px-3 py-4"
+            class="w-6/12 lg:w-4/12 px-1 lg:px-3 py-4"
           >
             <img :src="photo.src.original" alt="" />
           </div>
@@ -81,7 +81,6 @@ export default {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
-  padding: 0 5rem;
   justify-content: space-between;
 }
 
