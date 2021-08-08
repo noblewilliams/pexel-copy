@@ -1,20 +1,25 @@
 <template>
   <div
     class="fixed z-40 top-0 w-full bg-transparent text-white flex justify-between px-4 py-3"
+    :class="{ 'bg-nav-bg': scrollPosition > 150 }"
   >
     <div
-      class="w-full lg:w-2/12 flex justify-between lg:justify-start items-center space-x-3 relative z-40"
+      class="w-full lg:w-9/12 flex justify-between lg:justify-start items-center space-x-3 relative z-40"
     >
       <img src="../assets/logo.png" alt="logo" class="h-7" />
       <p class="text-xl font-semibold hidden lg:block">Pexels</p>
       <div
-        :class="{ hidden: !isopen, 'block lg:hidden': isopen }"
+        :class="{
+          hidden: !isopen,
+          'block lg:hidden': isopen,
+          'lg:block': scrollPosition > 150
+        }"
         class="w-8/12"
       >
         <div class="relative flex items-center">
           <input
             type="text"
-            class="rounded-md w-full py-2 px-4 placeholder-gray-600 text-lg lg:text-xl font-normal truncate bg-input-white focus:outline-none"
+            class="rounded-md w-full py-2 px-4 placeholder-gray-600 text-lg lg:text-lg font-normal truncate bg-input-white focus:outline-none"
             placeholder="Search for free photos"
           />
           <a href="#" class="absolute right-5 bottom-3">
@@ -101,13 +106,21 @@
 export default {
   data() {
     return {
-      isopen: false
+      isopen: false,
+      scrollPosition: null
     };
   },
   methods: {
     toggle() {
       this.isopen = !this.isopen;
+    },
+    updateScroll() {
+      this.scrollPosition = window.scrollY;
     }
+  },
+
+  mounted() {
+    window.addEventListener("scroll", this.updateScroll);
   }
 };
 </script>
